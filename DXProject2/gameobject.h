@@ -4,10 +4,17 @@
 #include "mesh.h"
 class GameObject {
 public:
-	void move(int x2, int y2, int z2);
+	GameObject(Mesh* m);
+	void move(double x2, double y2, double z2);
 	void rotate(float angle);
+	void setClickRadius(double rad);
+	double getClickRadius();
+	double getX();
+	double getY();
+	double getZ();
 private:
-	int x, y, z;
+	double x, y, z;
 	Mesh* mesh;
+	double radius;
 };
 #endif
