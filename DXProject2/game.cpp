@@ -14,9 +14,28 @@ Game::Game(HINSTANCE hInstance, int show) { // 640x480
 	wv->addMesh(chair);
 	screen->addRenderable(img);
 	screen->addRenderable(wv);
-	Input* input = new Input(this);
+	Input* input = new Input();
 	screen->setInput(input);
 	light = new Light(screen->getDevice());
+	input->regKey(0x33, new InputListener([l = this->light]() -> void {l->toAmbient(); }));
+	input->regKey(0x34, new InputListener([l = this->light]() -> void {l->toPoint(); }));
+	input->regKey(0x35, new InputListener([l = this->light]() -> void {l->toSpotlight(); }));
+	input->regKey(0x36, new InputListener([l = this->light]() -> void {l->toDirectional(); }));
+	world = new vector<GameObject*>;
+	GameObject* gameTiger = new GameObject(tiger);
+	GameObject* gameChair = new GameObject(chair);
+	gameTiger->setClickRadius(1);
+	gameChair->setClickRadius(1);
+	world->push_back(gameTiger);
+	world->push_back(gameChair);
+	gameTiger->move(1.5, -3, 4);
+	gameChair->move(-1.5, -3, 4);
+	player = new Player;
+	player->setInput(input);
+	player->setWorld(world);
+	player->setCamera(camera);
+	player->setupControls();
+	player->setDevice(screen->getDevice());
 }
 
 MSG Game::run() {

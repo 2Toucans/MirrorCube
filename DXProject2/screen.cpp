@@ -54,6 +54,7 @@ Screen::~Screen() {
 }
 
 long CALLBACK Screen::wndproc(HWND hWnd, UINT uMessage, WPARAM wParam, LPARAM lParam) {
+	POINT mousePoint;
 	switch (uMessage) {
 		case WM_CREATE:
 		{
@@ -68,18 +69,20 @@ long CALLBACK Screen::wndproc(HWND hWnd, UINT uMessage, WPARAM wParam, LPARAM lP
 		}
 		case WM_LBUTTONDOWN:
 		{
-
-			input->mousePress();
+			GetCursorPos(&mousePoint);
+			input->mousePress(mousePoint.x, mousePoint.y);
 			return 0;
 		}
 		case WM_MOUSEMOVE:
 		{
-			input->mousedrag(GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
+			GetCursorPos(&mousePoint);
+			input->mousedrag(mousePoint.x, mousePoint.y);
 			return 0;
 		}
 		case WM_LBUTTONUP:
 		{
-			input->mouseUnpress();
+			GetCursorPos(&mousePoint);
+			input->mouseUnpress(mousePoint.x, mousePoint.y);
 			return 0;
 		}
 		case WM_MOUSEWHEEL:

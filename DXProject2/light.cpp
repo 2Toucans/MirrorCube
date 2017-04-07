@@ -39,6 +39,22 @@ Light::Light(LPDIRECT3DDEVICE9 pDevice): device(pDevice) {
 	device->SetLight(2, &light);
 }
 
+void Light::toAmbient() {
+	changeLight(0);
+}
+
+void Light::toPoint() {
+	changeLight(1);
+}
+
+void Light::toSpotlight() {
+	changeLight(2);
+}
+
+void Light::toDirectional() {
+	changeLight(3);
+}
+
 void Light::changeLight(int lightIndex) {
 	switch (lightIndex) {
 	case 0: // ambient

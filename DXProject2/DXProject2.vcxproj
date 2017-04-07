@@ -23,6 +23,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>DXProject2</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>MirrorCube</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -161,9 +162,12 @@
     <ClCompile Include="gameobject.cpp" />
     <ClCompile Include="image.cpp" />
     <ClCompile Include="input.cpp" />
+    <ClCompile Include="inputlistener.cpp" />
     <ClCompile Include="light.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mesh.cpp" />
+    <ClCompile Include="mouseinputlistener.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="screen.cpp" />
     <ClCompile Include="worldview.cpp" />
   </ItemGroup>
@@ -173,8 +177,11 @@
     <ClInclude Include="gameobject.h" />
     <ClInclude Include="image.h" />
     <ClInclude Include="input.h" />
+    <ClInclude Include="inputlistener.h" />
     <ClInclude Include="light.h" />
     <ClInclude Include="mesh.h" />
+    <ClInclude Include="mouseinputlistener.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="renderable.h" />
     <ClInclude Include="screen.h" />
     <ClInclude Include="worldview.h" />

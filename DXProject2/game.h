@@ -15,6 +15,10 @@
 #include "input.h"
 #include "screen.h"
 #include "light.h"
+#include "inputlistener.h"
+#include "gameobject.h"
+#include "player.h"
+
 class Screen;
 class Game {
 public:
@@ -50,5 +54,7 @@ private:
 	Mesh* chair;
 	Camera* camera;
 	Light* light;
+	Player* player;
+	std::vector<GameObject*>* world;
 };
 #endif
