@@ -11,6 +11,7 @@ public:
 	void render(LPDIRECT3DDEVICE9 pDevice, LPDIRECT3DSURFACE9 surface);
 	void translate(float x, float y, float z);
 	void rotate(float ang);
+	LPD3DXMESH getMesh();
 private:
 	void load(const std::wstring& path, LPDIRECT3DDEVICE9 pDevice);
 	LPD3DXMESH dxMesh;

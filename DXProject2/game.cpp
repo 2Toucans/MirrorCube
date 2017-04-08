@@ -24,12 +24,12 @@ Game::Game(HINSTANCE hInstance, int show) { // 640x480
 	world = new vector<GameObject*>;
 	GameObject* gameTiger = new GameObject(tiger);
 	GameObject* gameChair = new GameObject(chair);
-	gameTiger->setClickRadius(1);
-	gameChair->setClickRadius(1);
+	//gameTiger->setClickRadius(1);
+	//gameChair->setClickRadius(1);
 	world->push_back(gameTiger);
 	world->push_back(gameChair);
-	gameTiger->move(1.5, -3, 4);
-	gameChair->move(-1.5, -3, 4);
+	gameTiger->move(1.5, 0, 4);
+	gameChair->move(-1.5, 0, 4);
 	player = new Player;
 	player->setInput(input);
 	player->setWorld(world);

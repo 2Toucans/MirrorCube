@@ -70,18 +70,21 @@ long CALLBACK Screen::wndproc(HWND hWnd, UINT uMessage, WPARAM wParam, LPARAM lP
 		case WM_LBUTTONDOWN:
 		{
 			GetCursorPos(&mousePoint);
+			ScreenToClient(hwnd, &mousePoint);
 			input->mousePress(mousePoint.x, mousePoint.y);
 			return 0;
 		}
 		case WM_MOUSEMOVE:
 		{
 			GetCursorPos(&mousePoint);
+			ScreenToClient(hwnd, &mousePoint);
 			input->mousedrag(mousePoint.x, mousePoint.y);
 			return 0;
 		}
 		case WM_LBUTTONUP:
 		{
 			GetCursorPos(&mousePoint);
+			ScreenToClient(hwnd, &mousePoint);
 			input->mouseUnpress(mousePoint.x, mousePoint.y);
 			return 0;
 		}

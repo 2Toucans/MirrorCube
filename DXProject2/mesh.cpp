@@ -104,3 +104,7 @@ void Mesh::rotate(float ang) {
 	D3DXMatrixRotationY(&transmtx, ang);
 	D3DXMatrixMultiply(&worldMatrix, &transmtx, &worldMatrix);
 }
+
+LPD3DXMESH Mesh::getMesh() {
+	return dxMesh;
+}
