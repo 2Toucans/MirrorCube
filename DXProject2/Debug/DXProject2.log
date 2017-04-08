@@ -10,9 +10,9 @@ c:\users\aaron\documents\visual studio 2015\projects\mirrorcube\dxproject2\playe
 c:\users\aaron\documents\visual studio 2015\projects\mirrorcube\dxproject2\player.cpp(32): warning C4305: 'argument': truncation from 'double' to 'float'
 c:\users\aaron\documents\visual studio 2015\projects\mirrorcube\dxproject2\player.cpp(33): warning C4305: 'argument': truncation from 'double' to 'float'
 c:\users\aaron\documents\visual studio 2015\projects\mirrorcube\dxproject2\player.cpp(34): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\aaron\documents\visual studio 2015\projects\mirrorcube\dxproject2\player.cpp(41): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\aaron\documents\visual studio 2015\projects\mirrorcube\dxproject2\player.cpp(42): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\aaron\documents\visual studio 2015\projects\mirrorcube\dxproject2\player.cpp(52): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\aaron\documents\visual studio 2015\projects\mirrorcube\dxproject2\player.cpp(82): warning C4101: 'surface': unreferenced local variable
+c:\users\aaron\documents\visual studio 2015\projects\mirrorcube\dxproject2\player.cpp(44): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\mirrorcube\dxproject2\player.cpp(45): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\mirrorcube\dxproject2\player.cpp(72): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\aaron\documents\visual studio 2015\projects\mirrorcube\dxproject2\player.cpp(109): warning C4101: 'surface': unreferenced local variable
   DXProject2.vcxproj -> C:\Users\Aaron\Documents\Visual Studio 2015\Projects\MirrorCube\Debug\MirrorCube.exe
   DXProject2.vcxproj -> C:\Users\Aaron\Documents\Visual Studio 2015\Projects\MirrorCube\Debug\MirrorCube.pdb (Full PDB)
