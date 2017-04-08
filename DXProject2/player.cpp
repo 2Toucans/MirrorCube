@@ -49,25 +49,10 @@ double Player::pickObject(GameObject* o, double x, double y) {
 	device->GetTransform(D3DTS_VIEW, &trans);
 	D3DXMatrixInverse(&invTrans, NULL, &trans);
 
-	D3DXVECTOR3 ray_origin = D3DXVECTOR3(
-		tmp_org.x + invTrans(3, 0),
-		tmp_org.y + invTrans(3, 1),
-		tmp_org.z + invTrans(3, 2)
-		);
-	D3DXVECTOR3 ray_direction = D3DXVECTOR3(
-		tmp_dir.x * invTrans(0, 0) + tmp_dir.y * invTrans(1, 0) + tmp_dir.z * invTrans(2, 0),
-		tmp_dir.x * invTrans(0, 1) + tmp_dir.y * invTrans(1, 1) + tmp_dir.z * invTrans(2, 1),
-		tmp_dir.x * invTrans(0, 2) + tmp_dir.y * invTrans(1, 2) + tmp_dir.z * invTrans(2, 2)
-	);
-	D3DXVec3Normalize(&ray_direction, &ray_direction);
-
-	/*
-	device->GetTransform(D3DTS_WORLD, &trans);
-	D3DXMatrixInverse(&invTrans, NULL, &trans);
-
-	D3DXVec3TransformCoord(&ray_origin, &ray_origin, &invTrans);
-	D3DXVec3TransformNormal(&ray_direction, &ray_direction, &invTrans);
-	*/
+	D3DXVECTOR3 ray_origin;
+	D3DXVECTOR3 ray_direction;
+	D3DXVec3TransformCoord(&ray_origin, &tmp_org, &invTrans);
+	D3DXVec3TransformNormal(&ray_direction, &tmp_dir, &invTrans);
 
 	D3DXVECTOR3 obj_point = D3DXVECTOR3(o->getX(), o->getY(), o->getZ());
 	D3DXVECTOR3 ray_obj = ray_origin - obj_point;
@@ -75,18 +60,6 @@ double Player::pickObject(GameObject* o, double x, double y) {
 	double c = D3DXVec3Dot(&ray_obj, &ray_obj) - o->getClickRadius() * o->getClickRadius();
 
 	double disc = b * b - 4 * c;	// a is 1
-
-	/*
-	wostringstream debug = wostringstream();
-	debug << "(" << ray_origin.x << ", " << ray_origin.y << ", " << ray_origin.z << ") "
-		"(" << ray_direction.x << ", " << ray_direction.y << ", " << ray_direction.z << ") " 
-		"(" << obj_point.x << ", " << obj_point.y << ", " << obj_point.z << ") "
-		<< endl;
-
-	debug << "End result: " << disc << endl;
-
-	OutputDebugString((LPWSTR)debug.str().c_str());
-	*/
 
 	if (disc < 0) {
 		return -1; // sphere was not clicked on
