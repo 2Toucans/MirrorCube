@@ -167,8 +167,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mesh.cpp" />
     <ClCompile Include="mouseinputlistener.cpp" />
+    <ClCompile Include="particlesystem.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="screen.cpp" />
+    <ClCompile Include="snowparticlesystem.cpp" />
     <ClCompile Include="worldview.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -181,9 +183,11 @@
     <ClInclude Include="light.h" />
     <ClInclude Include="mesh.h" />
     <ClInclude Include="mouseinputlistener.h" />
+    <ClInclude Include="particlesystem.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="renderable.h" />
     <ClInclude Include="screen.h" />
+    <ClInclude Include="snowparticlesystem.h" />
     <ClInclude Include="worldview.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

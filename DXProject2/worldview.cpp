@@ -11,6 +11,13 @@ void WorldView::render(LPDIRECT3DDEVICE9 pDevice, LPDIRECT3DSURFACE9 surface) {
 			m->render(pDevice, surface);
 		}
 
+		setupMatrices(pDevice);
+
+		for (ParticleSystem* p : particleSystems) {
+			p->update(0.007);
+			p->render(pDevice, surface);
+		}
+
 		// End the scene
 		pDevice->EndScene();
 	}
@@ -18,6 +25,10 @@ void WorldView::render(LPDIRECT3DDEVICE9 pDevice, LPDIRECT3DSURFACE9 surface) {
 
 void WorldView::addMesh(Mesh* m) {
 	meshes.push_back(m);
+}
+
+void WorldView::addParticleSystem(ParticleSystem* p) {
+	particleSystems.push_back(p);
 }
 
 void WorldView::init(LPDIRECT3DDEVICE9 pDevice) {

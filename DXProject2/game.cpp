@@ -24,6 +24,15 @@ Game::Game(HINSTANCE hInstance, int show) { // 640x480
 	world = new vector<GameObject*>;
 	GameObject* gameTiger = new GameObject(tiger);
 	GameObject* gameChair = new GameObject(chair);
+	SnowParticleSystem::BoundingBox* b = new SnowParticleSystem::BoundingBox();
+	b->min.x = -23;
+	b->min.y = -23;
+	b->min.z = -23;
+	b->max.x = 23;
+	b->max.y = 23;
+	b->max.z = 23;
+	SnowParticleSystem* snow = new SnowParticleSystem(screen->getDevice(), b, 6000);
+	wv->addParticleSystem(snow);
 	//gameTiger->setClickRadius(1);
 	//gameChair->setClickRadius(1);
 	world->push_back(gameTiger);
