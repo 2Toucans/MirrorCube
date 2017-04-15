@@ -18,6 +18,7 @@
 #include "inputlistener.h"
 #include "gameobject.h"
 #include "player.h"
+#include "snowparticlesystem.h"
 
 class Screen;
 class Game {
